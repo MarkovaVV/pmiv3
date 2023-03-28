@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigame.rpy", line 79: keyword argument 'action' appears more than once in a button statement.
-    action [Play("itms", "sounds/for_cards.mp3")]
+File "game/script.rpy", line 21: expected 'simple_expression' not found.
+    xalign=0.1
           ^
 
 Ren'Py Version: Ren'Py 8.1.0.23020701n
-Mon Mar 27 23:45:35 2023
+Tue Mar 28 23:12:16 2023

@@ -76,6 +76,7 @@ screen memo_scr:
                             text "#" size card_size
                 # нажатие на карточку
                 action If ( (card["c_chosen"] or not can_click), None, [SetDict(cards_list[card["c_number"]], "c_chosen", True), Return(card["c_number"]) ] )
+                
     text str(memo_timer) xalign .5 yalign 0.0 size card_size
 
     # renpy.play("sounds/for_cards.mp3", channel="itms")
@@ -115,12 +116,12 @@ label memoria_game:
         if turned_cards_values.count(turned_cards_values[0]) != len(turned_cards_values):
             $ renpy.pause (wait, hard = True)
             python:
-                for i in range (0, len(turned_cards_numbers) ):
+                for i in range (0, len(turned_cards_numbers)):
                     cards_list[turned_cards_numbers[i]]["c_chosen"] = False
         else:
             $ renpy.pause (wait, hard = True)
             python: 
-                for i in range (0, len(turned_cards_numbers) ):
+                for i in range (0, len(turned_cards_numbers)):
                     cards_list[turned_cards_numbers[i]]["c_value"] = 'empty'
                 for j in cards_list:
                     if j["c_chosen"] == False:
@@ -131,6 +132,8 @@ label memoria_game:
 # проигрыш
 label memo_game_lose:
     hide screen memo_scr
+    hide screen info_panel
+
     $ renpy.pause (0.1, hard = True)
 
     scene bg wasted
@@ -143,7 +146,9 @@ label memo_game_lose:
 # выигрыш
 label memo_game_win:
     hide screen memo_scr
-    $ renpy.pause (0.1, hard = True)
+    hide screen info_panel
+
+    $ renpy.pause (0.2, hard = True)
 
     scene bg passed
     play sound win
