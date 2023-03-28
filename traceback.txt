@@ -1,0 +1,30 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/minigame.rpy", line 1, in script
+    init python:
+  File "game/minigame.rpy", line 33, in <module>
+    renpy.play("sounds/for_cards.mp3", channel="itms")
+Exception: Can't play music during init phase.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/minigame.rpy", line 1, in script
+    init python:
+  File "E:\programm\renpy-8.0.3-sdk\renpy\ast.py", line 1132, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "E:\programm\renpy-8.0.3-sdk\renpy\python.py", line 1085, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/minigame.rpy", line 33, in <module>
+    renpy.play("sounds/for_cards.mp3", channel="itms")
+  File "E:\programm\renpy-8.0.3-sdk\renpy\exports.py", line 4094, in play
+    renpy.audio.music.play(filename, channel=channel, loop=False, **kwargs)
+  File "E:\programm\renpy-8.0.3-sdk\renpy\audio\music.py", line 89, in play
+    raise Exception("Can't play music during init phase.")
+Exception: Can't play music during init phase.
+
+Windows-10-10.0.19042 AMD64
+Ren'Py 8.1.0.23020701n
+Найди Фумо 1.0
+Mon Mar 27 23:50:47 2023
